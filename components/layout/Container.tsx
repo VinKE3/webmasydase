@@ -18,7 +18,7 @@ const Container: React.FC<ContainerProps> = ({
       bgClass = "bg-gradient-to-br from-primary to-secondary";
       break;
     case "gris":
-      bgClass = "bg-slate-100"; // Aquí puedes definir tu clase para el fondo oscuro
+      bgClass = "bg-slate-100";
       break;
     case "azul":
       bgClass = "bg-gradient-to-b from-black to-primary";
@@ -30,7 +30,7 @@ const Container: React.FC<ContainerProps> = ({
   return (
     <div className={bgClass}>
       <div
-        className={`max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8  ${className}`}
+        className={`max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center ${className}`}
       >
         {children}
       </div>

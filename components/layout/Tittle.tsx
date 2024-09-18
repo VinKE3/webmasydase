@@ -11,7 +11,7 @@ const Tittle: React.FC<TittleProps> = ({ level, children, className = "" }) => {
     case 1:
       return (
         <h1
-          className={`mb-4 text-4xl md:text-5xl font-bold from-celeste to-azul bg-gradient-to-r bg-clip-text text-transparent  block  ${className}`}
+          className={`mb-4 text-4xl md:text-5xl font-bold from-celeste to-azul bg-gradient-to-r bg-clip-text text-transparent text-center  block  ${className}`}
         >
           {children}
         </h1>
@@ -19,7 +19,7 @@ const Tittle: React.FC<TittleProps> = ({ level, children, className = "" }) => {
     case 2:
       return (
         <h2
-          className={`mb-4 text-4xl md:text-5xl font-bold text-white ${className}`}
+          className={`mb-4 text-4xl md:text-5xl font-bold text-white text-center  block  ${className}`}
         >
           {children}
         </h2>
@@ -27,7 +27,7 @@ const Tittle: React.FC<TittleProps> = ({ level, children, className = "" }) => {
     case 3:
       return (
         <h3
-          className={`mb-4 text-4xl md:text-5xl font-bold from-azul to-celeste bg-gradient-to-r bg-clip-text text-transparent  block${className}`}
+          className={`mb-4 text-4xl md:text-5xl font-bold from-azul to-celeste bg-gradient-to-r bg-clip-text text-transparent text-center block${className}`}
         >
           {children}
         </h3>

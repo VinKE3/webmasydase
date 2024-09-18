@@ -1,6 +1,6 @@
-export type AboutData = {
+export type UtilconData = {
   id: number;
   title: string;
   description: string;
-  imageUrl?: string;
+  icon: React.ComponentType;
 }[];
