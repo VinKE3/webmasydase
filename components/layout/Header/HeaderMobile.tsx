@@ -3,19 +3,31 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-
 import Link from "next/link";
 import { dataHeader } from "./Header.data";
 
+// Define the types for the menu items and subelements
+interface SubElement {
+  idLink: string;
+  name: string;
+}
+
+interface HeaderItem {
+  id: number;
+  name: string;
+  icon: React.ComponentType<{ className?: string }>;
+  subElements?: SubElement[];
+}
+
 export default function MobileHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openSubMenu, setOpenSubMenu] = useState(null);
+  const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleSubMenu = (menu: any) => {
+  const toggleSubMenu = (menu: number | null) => {
     setOpenSubMenu(openSubMenu === menu ? null : menu);
   };
 
@@ -58,7 +70,7 @@ export default function MobileHeader() {
             className="fixed inset-0 bg-white dark:bg-black z-40 p-6"
           >
             <div className="space-y-6">
-              {dataHeader.map((item) => (
+              {dataHeader.map((item: HeaderItem) => (
                 <div key={item.id}>
                   {/* Main link */}
                   <div>

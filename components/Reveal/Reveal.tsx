@@ -1,21 +1,15 @@
 "use client";
 import { useAnimation, useInView, motion } from "framer-motion";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
-export function Reveal({
-  children,
-  variant = "default",
-}: {
-  children: React.ReactNode;
-  variant?: string;
-}) {
+export function Reveal({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
   const slideControls = useAnimation();
-  const isDark = theme === "dark";
+  // const isDark = theme === "dark";
   const [bgColor, setBgColor] = useState("#0B3C6C");
 
   useEffect(() => {

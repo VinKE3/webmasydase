@@ -15,7 +15,7 @@ import { MotionTransition } from "../MotionTransition";
 
 export function About() {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  // const isDark = theme === "dark";
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
