@@ -14,7 +14,7 @@ import Subtitle from "../layout/Subtitle";
 import { MotionTransition } from "../MotionTransition";
 
 export function About() {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   // const isDark = theme === "dark";
   const [hasMounted, setHasMounted] = useState(false);
 
