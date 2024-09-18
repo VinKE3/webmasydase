@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Reveal } from "../Reveal";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { dataAbout } from "./About.data";
 import { Meteors } from "../Meteors/meteors";
