@@ -1,31 +1,9 @@
 "use client";
-
-import Link from "next/link";
-import { Reveal } from "../Reveal";
 import Container from "../layout/Container";
 import Section from "../layout/Section";
-import Tittle from "../layout/Tittle";
-import Subtitle from "../layout/Subtitle";
 import { MotionTransition } from "../MotionTransition";
+import { IconAdjustmentsBolt } from "@tabler/icons-react";
 import EncryptButton from "../layout/Buttons/EncryptButton";
-import { DataUtilcon } from "./Utilcon.data";
-import { SimpleHoverEffect } from "../FeatureSections/SimpleHoverEffect";
-import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
-} from "@tabler/icons-react";
-import { FlipWords } from "../FlipWords/flip-words";
-import {
-  TextRevealCard,
-  TextRevealCardDescription,
-  TextRevealCardTitle,
-} from "../TextRevealCard/text-reveal-card";
 
 const features = [
   {
@@ -73,81 +51,67 @@ const features = [
     icon: IconAdjustmentsBolt,
   },
 ];
-const words = ["Mejores", "Llamativos", "Elegantes", "Modernos"];
+
 const Utilcon = () => {
   return (
-    <Container>
+    <Container bgType="white">
       <Section id="utilcon">
-        <div className="flex flex-col items-center text-center mt-10">
-          {" "}
-          <Reveal>
-            <Tittle level={1}>Ultilcon, optimiza tu productividad</Tittle>
-          </Reveal>
-          <Reveal>
-            <Subtitle type="grisOscuro" className="text-center">
-              Herramienta diseñada para facilitar las provisiones o cargas
-              masivas de sus ventas y compras.
-            </Subtitle>
-          </Reveal>
-        </div>
         <MotionTransition>
-          <div className="overflow-hidden bg-white py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                <div className="lg:pl-4 lg:pt-4">
-                  <div className="lg:max-w-lg">
-                    <h2 className="text-base font-semibold  text-primary">
-                      Beneficios
-                    </h2>
-                    <dl className="mt-10 max-w-xl space-y-4 text-base  text-gray-600 lg:max-w-none">
-                      {features.map((feature) => (
-                        <div key={feature.name} className="relative pl-9">
-                          <dt className=" font-semibold text-gray-900">
-                            <feature.icon
-                              aria-hidden="true"
-                              className="absolute left-1 top-1 h-5 w-5 text-primary"
-                            />
-                            {feature.name}
-                          </dt>{" "}
-                        </div>
-                      ))}
-                    </dl>
-                  </div>
-                </div>
-                <div className="flex items-start justify-end lg:order-first">
+          <div className="relative isolate">
+            <div className="mx-auto max-w-full sm:px-6 lg:px-8">
+              <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-slate-100 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+                <div className="relative">
                   <img
-                    alt="Product screenshot"
+                    alt=""
                     src="/utilcon/1.jpg"
-                    width={500}
-                    height={500}
-                    className="w-[48rem] h-[40rem] object-cover object-center max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+                    className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
                   />
+
+                  <div className="absolute inset-0 bg-black opacity-10 rounded-2xl"></div>
+                </div>
+                <div className="w-full flex-auto">
+                  <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+                    Ultilcon, optimiza tu productividad
+                  </h2>
+                  <p className="mt-6 text-lg leading-8 text-gris">
+                    Herramienta diseñada para facilitar las provisiones o cargas
+                    masivas de sus ventas y compras, cuenta con un módulo de
+                    cancelaciones y trabaja enterno red.
+                  </p>
+                  <h3 className="mt-6 text-2xl font-bold tracking-tight text-primary">
+                    Beneficios de nuestro sistema
+                  </h3>
+                  <ul
+                    role="list"
+                    className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-white sm:grid-cols-2"
+                  >
+                    {features.map(({ name, icon: IconAdjustmentsBolt }) => (
+                      <li key={name} className="flex gap-x-3 text-gris">
+                        <IconAdjustmentsBolt className="h-7 w-5 flex-none text-primary" />
+                        {name}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-10 flex">
+                    <EncryptButton textButton="Solicitar Demo" />
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
+            >
+              <div
+                style={{
+                  clipPath:
+                    "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
+                }}
+                className="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#81cbff] to-[#00ccff] opacity-25"
+              />
+            </div>
           </div>
         </MotionTransition>
-        <div className="h-[40rem] flex justify-center items-center px-4">
-          <div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
-            Construye
-            <FlipWords words={words} /> <br />
-            Sitios Web con MasyDase
-          </div>
-        </div>
-        <div className="flex items-center justify-center bg-celeste h-[40rem] rounded-2xl w-full">
-          <TextRevealCard
-            text="Tienes un problema?"
-            revealText="Nosotros la solución"
-          >
-            <TextRevealCardTitle>
-              Como empresa, siemrpre se nos presentan problemas
-            </TextRevealCardTitle>
-            <TextRevealCardDescription>
-              Pero no te preocupes, nosotros tenemos la respuesta como por arte
-              de magia
-            </TextRevealCardDescription>
-          </TextRevealCard>
-        </div>
       </Section>
     </Container>
   );

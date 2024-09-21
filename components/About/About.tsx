@@ -10,24 +10,19 @@ import Tittle from "../layout/Tittle";
 import Subtitle from "../layout/Subtitle";
 import { MotionTransition } from "../MotionTransition";
 import CardMeteor from "../Meteors/cardMeteor";
-
+import { TextGenerateEffect } from "@/components/TextGenerateEffect/text-generate-effect";
 export function About() {
+  const words = `En MASYDASE, somos un equipo joven dedicado a la programación de sistemas convertidas en soluciones, y que brinda soporte técnico a más de 1500 empresas nacionales, desde 1998.`;
   return (
     <Container bgType="azul">
       <Section id="nosotros">
         <div className="flex flex-col items-center text-center mt-10">
           <Reveal>
-            <Tittle level={2}>
+            <Tittle type="blanco">
               Tienes un problema? Encontramos la mejor Solución.
             </Tittle>
           </Reveal>
-          <Reveal>
-            <Subtitle className="text-center">
-              En MASYDASE, somos un equipo joven dedicado a la programación de
-              sistemas convertidas en soluciones, y que brinda soporte técnico a
-              más de 1500 empresas nacionales, desde 1998.
-            </Subtitle>
-          </Reveal>
+          <TextGenerateEffect className="text-white" words={words} />
           <Reveal>
             <div className="my-8">
               <Link href="#plans">

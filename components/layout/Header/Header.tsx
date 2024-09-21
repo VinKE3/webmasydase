@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed w-full top-0 z-50 shadow-2xl transition-colors duration-300 ${
-        scrolled ? "bg-black" : "bg-transparent"
+        scrolled ? "bg-primary" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}

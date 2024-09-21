@@ -1,44 +1,38 @@
 import React from "react";
 
 type TittleProps = {
-  level: 1 | 2 | 3; // Niveles de título (h1, h2, h3)
   children: React.ReactNode;
   className?: string;
+  type?: "gradienteAzul" | "gradienteCeleste" | "blanco";
 };
 
-const Tittle: React.FC<TittleProps> = ({ level, children, className = "" }) => {
-  switch (level) {
-    case 1:
-      return (
-        <h1
-          className={`mb-4 text-4xl md:text-5xl font-bold from-celeste to-azul bg-gradient-to-r bg-clip-text text-transparent text-center  block  ${className}`}
-        >
-          {children}
-        </h1>
-      );
-    case 2:
-      return (
-        <h2
-          className={`mb-4 text-4xl md:text-5xl font-bold text-white text-center  block  ${className}`}
-        >
-          {children}
-        </h2>
-      );
-    case 3:
-      return (
-        <h3
-          className={`mb-4 text-4xl md:text-5xl font-bold from-azul to-celeste bg-gradient-to-r bg-clip-text text-transparent text-center block${className}`}
-        >
-          {children}
-        </h3>
-      );
+const Tittle: React.FC<TittleProps> = ({
+  children,
+  className = "",
+  type = "blanco",
+}) => {
+  let typeSwitch = "";
+
+  switch (type) {
+    case "gradienteAzul":
+      typeSwitch =
+        "from-azul to-celeste bg-gradient-to-r bg-clip-text text-transparent text-center block";
+      break;
+    case "gradienteCeleste":
+      typeSwitch =
+        "from-celeste to-azul bg-gradient-to-r bg-clip-text text-transparent text-center block";
+      break;
     default:
-      return (
-        <h1 className={`text-4xl font-bold text-primary ${className}`}>
-          {children}
-        </h1>
-      );
+      typeSwitch = "text-white text-center block";
   }
+
+  return (
+    <h1
+      className={`mb-4 text-4xl md:text-5xl font-bold ${typeSwitch} ${className}`}
+    >
+      {children}
+    </h1>
+  );
 };
 
 export default Tittle;

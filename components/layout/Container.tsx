@@ -3,7 +3,7 @@ import React from "react";
 type ContainerProps = {
   children: React.ReactNode;
   className?: string;
-  bgType?: "white" | "gradient" | "gris" | "azul"; // Añadimos el prop `bgType`
+  bgType?: "white" | "gradient" | "gris" | "azul" | "celeste"; // Añadimos el prop `bgType`
 };
 
 const Container: React.FC<ContainerProps> = ({
@@ -22,6 +22,9 @@ const Container: React.FC<ContainerProps> = ({
       break;
     case "azul":
       bgClass = "bg-gradient-to-b from-black to-primary";
+      break;
+    case "celeste":
+      bgClass = "bg-gradient-to-b from-sky-500 to-sky-300";
       break;
     default:
       bgClass = "bg-white";

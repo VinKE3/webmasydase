@@ -20,15 +20,18 @@ const Subtitle: React.FC<SubtitleProps> = ({
       break;
     case "gris":
       typeSwitch =
-        "from-grisClarito to-grisOscuro bg-gradient-to-r bg-clip-text text-transparent block"; // Aquí puedes definir tu clase para el fondo oscuro
+        "from-grisClarito to-grisOscuro bg-gradient-to-r bg-clip-text text-transparent block";
       break;
     default:
       typeSwitch = "text-white";
   }
+
   return (
-    <h4 className={`mb-5 font-semibold md:text-2xl sm:text-xl ${className}`}>
-      <span className={typeSwitch}>{children}</span>
-    </h4>
+    <h1
+      className={`${typeSwitch} mb-5 font-semibold md:text-2xl sm:text-xl ${className}`}
+    >
+      {children}
+    </h1>
   );
 };
 
